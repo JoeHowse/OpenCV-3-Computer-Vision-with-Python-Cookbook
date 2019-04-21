@@ -32,7 +32,7 @@ sz = 25
 mask = np.zeros(fft.shape, np.uint8)
 mask[image.shape[0]//2-sz:image.shape[0]//2+sz,
      image.shape[1]//2-sz:image.shape[1]//2+sz, :] = 1
-fft_shift *= 1-mask
+fft_shift *= mask
 fft = np.fft.ifftshift(fft_shift, axes=[0, 1])
 
 
